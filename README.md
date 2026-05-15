@@ -31,7 +31,8 @@ robot-perception/
 -ros2_node/
 --- detector_node.py # ROS 2 node publishing detections
 --- launch # launch files
--notebooks/ 
+--- camera_publisher.py # Real time prediction
+-notebooks/  
 --- results.ipynb # visualizations and analysis
 -docker/ 
 --- Dockerfile requirements.txt # reproducible environment
@@ -39,10 +40,20 @@ robot-perception/
 
 
 ## How to Run
-TODO
+- Clone the repo
+- Install requirements: pip install -r requirements.txt
+- Place best.pt (your trained YOLOv8 model) in ros2_node/
+- Run the camera script i.e. camera_publisher.py
+
 
 ## Benchmarks
-TODO
+- mAP50 : 0.557
+- mAP50-95 : 0.416
+- Precision : 0.642
+- Recall : 0.511
+- Epochs trained : 5 
+- Model training in progress with 50 epochs
+
 
 ## Limitations
 - Model may underperform on objects that are partially occluded or at unusual scales not represented in training data
